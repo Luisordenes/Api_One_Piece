@@ -1,12 +1,18 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { PirateModule } from './pirate/pirate.module';
-import { BountyModule } from './bounty/bounty.module';
 import { DatabaseModule } from './database/database.module';
+import { PiratesModule } from './pirates/pirates.module';
+import { BountiesModule } from './bounties/bounties.module';
+import { ConfigModule } from '@nestjs/config';
 
 @Module({
-  imports: [PirateModule, BountyModule, DatabaseModule],
+  imports: [
+    PiratesModule,
+    BountiesModule,
+    DatabaseModule,
+    ConfigModule.forRoot(),
+  ],
   controllers: [AppController],
   providers: [AppService],
 })

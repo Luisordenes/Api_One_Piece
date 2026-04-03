@@ -4,8 +4,6 @@ export const databaseProviders = [
   {
     provide: 'DATABASE_CONNECTION',
     useFactory: (): Promise<typeof mongoose> =>
-      mongoose.connect(
-        'mongodb+srv://luisordenesavila_db_user:LaLO2qM8dOvzagpH@clusteronepiece.psx52x2.mongodb.net/?appName=ClusterOnePiece',
-      ),
+      mongoose.connect(process.env.MONGOL_URL || 'mongodb://localhost:27017'),
   },
 ];
