@@ -14,6 +14,8 @@ export const BountySchema = new mongoose.Schema(
         message: 'El estado debe ser Wanted o Captured',
       },
       default: 'Wanted',
+      set: (value: string) =>
+        value.charAt(0).toUpperCase() + value.slice(1).toLowerCase(),
     },
     pirata: {
       type: mongoose.Schema.Types.ObjectId,

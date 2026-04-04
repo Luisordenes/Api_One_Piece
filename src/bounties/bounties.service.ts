@@ -17,13 +17,17 @@ export class BountiesService {
   }
 
   findAll(): Promise<Bounty[]> {
-    return this.bountyModel.find().populate('pirata').exec();
+    return this.bountyModel
+      .find()
+      .select('-createdAt -updatedAt')
+      .populate('pirata', 'nombre tripulacion')
+      .exec();
   }
 
   async findOne(id: string): Promise<Bounty> {
     const bounty = await this.bountyModel
       .findById(id)
-      .populate('pirata')
+      .populate('pirata', 'nombre tripulacion')
       .exec();
 
     if (!bounty) {
@@ -31,6 +35,14 @@ export class BountiesService {
     }
 
     return bounty;
+  }
+
+  async findActive(): Promise<Bounty[]> {
+    return this.bountyModel
+      .find({ estado: 'Wanted' })
+      .select('-createdAt -updatedAt')
+      .populate('pirata', 'nombre tripulacion')
+      .exec();
   }
 
   async update(id: string, updateBountyDto: UpdateBountyDto): Promise<Bounty> {

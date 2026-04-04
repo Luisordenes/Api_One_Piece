@@ -25,6 +25,11 @@ export class BountiesController {
     return this.bountiesService.findAll();
   }
 
+  @Get('active')
+  findActive() {
+    return this.bountiesService.findActive();
+  }
+
   @Get(':id')
   findOne(@Param('id') id: string) {
     return this.bountiesService.findOne(id);

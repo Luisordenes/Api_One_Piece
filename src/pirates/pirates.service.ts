@@ -1,4 +1,9 @@
-import { Inject, Injectable, NotFoundException } from '@nestjs/common';
+import {
+  BadRequestException,
+  Inject,
+  Injectable,
+  NotFoundException,
+} from '@nestjs/common';
 import { CreatePirateDto } from './dto/create-pirate.dto';
 import { UpdatePirateDto } from './dto/update-pirate.dto';
 import { Pirate } from './entities/pirate.entity';
@@ -11,13 +16,21 @@ export class PiratesService {
     private pirateModel: Model<Pirate>,
   ) {}
 
-  create(createPirateDto: CreatePirateDto): Promise<Pirate> {
-    const pirate = new this.pirateModel(createPirateDto);
-    return pirate.save();
+  async create(createPirateDto: CreatePirateDto): Promise<Pirate> {
+    try {
+      const pirate = new this.pirateModel(createPirateDto);
+      return await pirate.save();
+    } catch (error: any) {
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+      if (error?.code === 11000) {
+        throw new BadRequestException('El nombre del pirata ya existe');
+      }
+      throw error;
+    }
   }
 
   findAll(): Promise<Pirate[]> {
-    return this.pirateModel.find().exec();
+    return this.pirateModel.find().select('-createdAt -updatedAt').exec();
   }
 
   async findOne(id: string): Promise<Pirate> {
