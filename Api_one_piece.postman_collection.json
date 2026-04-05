@@ -1,0 +1,264 @@
+{
+  "info": {
+    "_postman_id": "b308a446-1408-4102-a481-c5724aa4a297",
+    "name": "Api_one_piece",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "53326778",
+    "_collection_link": "https://go.postman.co/collection/53326778-b308a446-1408-4102-a481-c5724aa4a297?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Create pirate",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"nombre\": \"Ace\",\r\n    \"tripulacion\": \"Piratas Barba blanca\",\r\n    \"tieneFrutaDelDiablo\": true\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/pirates/",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "pirates",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Ver piratas",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/pirates",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "pirates"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Ver pirata",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/pirates/69d1894a81830099eb163038",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "pirates",
+            "69d1894a81830099eb163038"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Actualizar pirata",
+      "request": {
+        "method": "PATCH",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"tieneFrutaDelDiablo\": true\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/pirates/69d1894a81830099eb163038",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "pirates",
+            "69d1894a81830099eb163038"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Eliminar pirata",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/pirates/69d1889f81830099eb16302f",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "pirates",
+            "69d1889f81830099eb16302f"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create bounty",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"cantidadBellys\": 550000000,\r\n    \"pirata\": \"69d1894a81830099eb163038\",\r\n    \"estado\": \"Captured\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/bounties",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "bounties"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Ver bounties",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/bounties",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "bounties"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Ver piratas buscados",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/bounties/active",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "bounties",
+            "active"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Ver bounty",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/bounties/69d1899781830099eb16303a",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "bounties",
+            "69d1899781830099eb16303a"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Actualizar bounty",
+      "request": {
+        "method": "PATCH",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"estado\": \"wanted\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/bounties/69d1741aea1358f5515e3452",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "bounties",
+            "69d1741aea1358f5515e3452"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Eliminar bounty",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/bounties/69d1715625806b56be70e275",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "bounties",
+            "69d1715625806b56be70e275"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}

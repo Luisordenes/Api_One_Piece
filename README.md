@@ -21,17 +21,36 @@
   <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
   [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
-## Description
+## 📌 Description
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+API built with **NestJS** and **TypeScript**, inspired by the One Piece universe.  
+It allows managing pirates and their bounties using MongoDB.
 
-## Project setup
+---
+
+## 📦 Project Setup
+
+Follow these steps to run the project locally:
+
+### Clone the repository
+
+```bash
+$ git clone https://github.com/Luisordenes/Api_One_Piece.git
+```
+
+### Navigate into the project folder
+
+```bash
+$ cd Api_One_Piece
+```
+
+### Project setup
 
 ```bash
 $ npm install
 ```
 
-## Compile and run the project
+### Compile and run the project
 
 ```bash
 # development
@@ -56,6 +75,10 @@ $ npm run test:e2e
 # test coverage
 $ npm run test:cov
 ```
+
+### 🧪 Unit Test Results
+
+![Tests passing](./src/images/CaptureTest.JPG)
 
 ## Deployment
 
