@@ -50,6 +50,12 @@ $ cd Api_One_Piece
 $ npm install
 ```
 
+### Environment Setup
+
+```bash
+cp .env.example .env
+```
+
 ### Compile and run the project
 
 ```bash
